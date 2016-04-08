@@ -19,12 +19,12 @@ protected:
 
 
 TEST_F(NginxStringConfigTest, SimpleConfig) {
-	EXPECT_TRUE(ParseString("foo bar;")); 
+	EXPECT_TRUE(ParseString("foo bar;")) <<"tested with a normal string"; 
 };
 
 /* tests to see if a string with out a semicolon is a bad string */
 TEST_F(NginxStringConfigTest, BadConfig) {
-	EXPECT_FALSE(ParseString("foobar"));
+	EXPECT_FALSE(ParseString("foobar")) << "tested with a bad string";
 }
 
 TEST_F(NginxStringConfigTest, BadEndBlockConfig) {
